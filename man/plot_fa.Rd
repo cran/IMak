@@ -10,31 +10,31 @@ plot_fa(items, which = 0, mode = "A", language = "E",
   info = T, directory = F, switch.from = 0, switch.to = 0)
 }
 \arguments{
-\item{items}{An object of class \code{'fa_items'} generated with function \code{build_fa}.}
+\item{items}{An object of class \code{'fa_items'} generated with function \code{build_fa}. No default.}
 
-\item{which}{A numeric vector designating which isomorph(s) to plot. Plot all by defect.}
+\item{which}{A numeric vector designating which isomorph(s) to plot. Plot all by default.}
 
-\item{mode}{A character string designating plot mode "A", "B" or "C". Plot mode "A" by defect.}
+\item{mode}{A character string designating plot mode "A", "B" or "C". Plot mode "A" by default.}
 
-\item{language}{A character string designating English ("E"), German ("D") or Spanish ("S") language. "E" by defect.}
+\item{language}{A character string designating English ("E"), German ("D") or Spanish ("S") language. Default is "E".}
 
-\item{language.dir}{A character string designating language for output files. "A" by defect selects all languages.}
+\item{language.dir}{A character string designating language for output files. "A" by default selects all languages.}
 
-\item{form.int}{A character string designating the form from "A" to "D" of the internal shape lines, or "R" for random. "A" by defect.}
+\item{form.int}{A character string designating the form from "A" to "D" of the internal shape lines, or "R" for random. Default is "A".}
 
-\item{form.ext}{A character string designating the form from "A" to "D" of the external trapezium, or "R" for random. "A" by defect.}
+\item{form.ext}{A character string designating the form from "A" to "D" of the external trapezium, or "R" for random. Default is "A".}
 
-\item{size.shape}{A number designating the size of every shape. 1 by defect.}
+\item{size.shape}{A number designating the size of every shape. Default is 1.}
 
-\item{size.dot}{A number designating the size of every shape dot. 2 by defect.}
+\item{size.dot}{A number designating the size of every shape dot. Default is 2.}
 
-\item{size.line}{A number designating the thickness of every shape line. 1 by defect.}
+\item{size.line}{A number designating the thickness of every shape line. Default is 1.}
 
-\item{size.q}{A number designating the size of the question mark. 3.5 by defect.}
+\item{size.q}{A number designating the size of the question mark. Default is 3.5.}
 
-\item{size.word}{A number designating the size of the verbal options. 1.2 by defect.}
+\item{size.word}{A number designating the size of the verbal options. Default is 1.2.}
 
-\item{info}{Should rules applied and correct answers be informed? True by defect.}
+\item{info}{Should rules applied and correct answers be informed? True by default.}
 
 \item{directory}{Character string designating a file in your PC where to store the isomorphs.}
 
@@ -43,7 +43,7 @@ plot_fa(items, which = 0, mode = "A", language = "E",
 \item{switch.to}{Number 'q' designating an option from 1 to 8 to switch with 'p'.}
 }
 \value{
-A data frame containing rules applied and right answers when \code{info=T} by defect, or an object of class \code{'fa_items'} when \code{which} has length 1, its value is greater than 0 and both \code{switch.from} and \code{switch.to} are greater than 0.
+A data frame containing rules applied and right answers when \code{info=T} by default, or an object of class \code{'fa_items'} when \code{which} has length 1, its value is greater than 0 and both \code{switch.from} and \code{switch.to} are greater than 0.
 }
 \description{
 \code{plot_fa} plots the information of figural analogies.
@@ -54,7 +54,7 @@ This information is previously generated with function
 The \code{plot_fa} function should not be assigned to an
 object, except when willing to use the optional arguments
 \code{switch.from} and \code{switch.to}. In the latter
-case, the target object should have the same name as the
+case, the object name should be the same as the name of the
 object of class \code{'fa_items'}, and argument
 \code{which} must designate the isomorph to be affected
 even if there is only one isomorph available. For example:
@@ -62,42 +62,42 @@ even if there is only one isomorph available. For example:
 switch.from = 1, switch.to = 2)}
 }
 \examples{
-\dontrun{Create two isomorphs with one rule, setting the correct answer to 1:}
+## Create two isomorphs with one rule, setting the correct answer to 1:
 one <- build_fa(isomorphs = 2, dot.mov = c(1, 2), correct = 1)
-\dontrun{Plot them:}
+## Plot them:
 plot_fa(one)
-\dontrun{Change the correct answer of item 2 from position 1 to position 2:}
+## Change the correct answer of item 2 from position 1 to position 2:
 one <- plot_fa(one, which = 2, switch.from = 1, switch.to = 2)
-\dontrun{Choose a directory and save the items:
-dir1 <- "enter your new directory here"
-plot_fa(one, directory = dir1)}
+## Choose a directory and save the items:
+# dir1 <- "enter your new directory here"
+# plot_fa(one, directory = dir1)
 
-\dontrun{Create four isomorphs with two rules:}
+## Create four isomorphs with two rules:
 two <- build_fa(isomorphs = 4, mirror = 1, trap.rot = c(90, 45))
-\dontrun{Plot them in German language:}
-plot_fa(two,language = "D")
-\dontrun{Plot only items 2 and 3 in Spanish and choose form "B" for the internal lines:}
+## Plot them in German language:
+plot_fa(two, language = "D")
+## Plot only items 2 and 3 in Spanish and choose form "B" for the internal lines:
 plot_fa(two, language = "S", form.int = "B", which = c(2, 3))
-\dontrun{Choose a different directory and save these two items by keeping the latter configuration:
-dir2 <- "enter your new directory here"
-plot_fa(two, which = c(2, 3), language.dir = "S", form.int = "B", directory = dir2)}
+## Choose a different directory and save these two items by keeping the latter configuration:
+# dir2 <- "enter your new directory here"
+# plot_fa(two, which = c(2, 3), language.dir = "S", form.int = "B", directory = dir2)
 
-\dontrun{Create 20 isomorphs with three rules. Set \\code{automatic=F} and affect the options:}
+## Create 20 isomorphs with three rules. Set automatic=F and affect the options:
 three <- build_fa(isomorphs = 20, mirror = 1, trap.rot = c(90, 45), dot.mov = c(1, 2),
 automatic = FALSE, al.mirror = c(0, 1), al.trap.rot = -45, al.dot.mov = 1)
-\dontrun{Plot them:}
+## Plot them:
 plot_fa(three)
-\dontrun{Plot each individual shape of item 13 in German language only:}
+## Plot each individual shape of item 13 in German language only:
 plot_fa(three, which = 13, mode = "C", language = "D")
-\dontrun{Choose a different directory and save the item parts:
-dir3 <- "enter your new directory here"
-plot_fa(three, which = 13, mode = "C", language.dir = "D", directory = dir3)}
+## Choose a different directory and save the item parts:
+# dir3 <- "enter your new directory here"
+# plot_fa(three, which = 13, mode = "C", language.dir = "D", directory = dir3)
 }
 \author{
 Diego Blum \email{<blumworx@gmail.com>}
 }
 \references{
-Blum, D., Holling, H., Galibert, M.S., & Forthmann, B. (2016, in review). Task difficulty prediction of figural analogies. \emph{Intelligence}.
+Blum, D., Holling, H., Galibert, M.S., & Forthmann, B. (2016, in press). Task difficulty prediction of figural analogies. \emph{Intelligence}.
 }
 \seealso{
 \code{\link{IMak}}
