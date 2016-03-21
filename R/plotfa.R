@@ -19,11 +19,11 @@
 #' @param mode A character string designating plot mode "A", "B" or "C". Plot mode "A" by default.
 #' @param language A character string designating English ("E"), German ("D") or Spanish ("S") language. Default is "E".
 #' @param language.dir A character string designating language for output files. "A" by default selects all languages.
-#' @param form.int A character string designating the form from "A" to "D" of the internal shape lines, or "R" for random. Default is "A".
-#' @param form.ext A character string designating the form from "A" to "D" of the external trapezium, or "R" for random. Default is "A".
+#' @param form.int A character string designating the form from "A" to "D" of the internal main shape, or "R" for random. Default is "A".
+#' @param form.ext A character string designating the form from "A" to "D" of the trapezium, or "R" for random. Default is "A".
 #' @param size.shape A number designating the size of every shape. Default is 1.
 #' @param size.dot A number designating the size of every shape dot. Default is 2.
-#' @param size.line A number designating the thickness of every shape line. Default is 1.
+#' @param size.line A number designating the thickness of every shape. Default is 1.
 #' @param size.q A number designating the size of the question mark. Default is 3.5.
 #' @param size.word A number designating the size of the verbal options. Default is 1.2.
 #' @param info Should rules applied and correct answers be informed? True by default.
@@ -32,7 +32,7 @@
 #' @param switch.to Number 'q' designating an option from 1 to 8 to switch with 'p'.
 #' @return A data frame containing rules applied and right answers when \code{info=T} by default, or an object of class \code{'fa_items'} when \code{which} has length 1, its value is greater than 0 and both \code{switch.from} and \code{switch.to} are greater than 0.
 #' @author Diego Blum \email{<blumworx@gmail.com>}
-#' @references Blum, D., Holling, H., Galibert, M.S., & Forthmann, B. (2016, in press). Task difficulty prediction of figural analogies. \emph{Intelligence}.
+#' @references Blum, D., Holling, H., Galibert, M.S., & Forthmann, B. (2016). Task difficulty prediction of figural analogies. \emph{Intelligence, 56,} 72-81.
 #' @seealso \code{\link{IMak}}
 #' @examples
 #' ## Create two isomorphs with one rule, setting the correct answer to 1:
@@ -49,7 +49,7 @@
 #' two <- build_fa(isomorphs = 4, mirror = 1, trap.rot = c(90, 45))
 #' ## Plot them in German language:
 #' plot_fa(two, language = "D")
-#' ## Plot only items 2 and 3 in Spanish and choose form "B" for the internal lines:
+#' ## Plot only items 2 and 3 in Spanish and choose form "B" for the internal main shape:
 #' plot_fa(two, language = "S", form.int = "B", which = c(2, 3))
 #' ## Choose a different directory and save these two items by keeping the latter configuration:
 #' # dir2 <- "enter your new directory here"
@@ -111,7 +111,7 @@ plot_fa <- function(
     sin(angle*0.0174532925)*x[,1] + cos(angle*0.0174532925)*x[,2])
   }
 
-  # Mirroring function:
+  # Reflection function:
   mir <- function(x) {
     cbind(-1*x[,1], x[,2])
   }
@@ -138,7 +138,7 @@ plot_fa <- function(
   # Creating a data frame with item characteristics:
   information <- data.frame(NA, NA, NA, NA, NA, NA)
   names(information) <- c("Isomorphs", "Correct", "      ",
-                          "Rules", "      ", "Total")
+                          "General rules", "      ", "Total")
   information[,6] <- if (all_or_some == "all")
     isomorphs else length(which)
   information[,4] <- as.character()
@@ -146,7 +146,7 @@ plot_fa <- function(
   for (i in 1:length(items[[1]][[12]][[2]])) {
     rulenames[i] <- switch(items[[1]][[12]][[2]][i],
                            "1" = "Main shape rotation",
-                           "2" = "Mirroring",
+                           "2" = "Reflection",
                            "3" = "Trapezium rotation",
                            "4" = "Subtraction",
                            "5" = "Dot edge movement")
@@ -191,11 +191,11 @@ plot_fa <- function(
   # Function to plot figures (it will be assigned to a list):
   plot.figure <- function(x) {
 
-    # Identify mirroring:
+    # Identify reflection:
     bcirc_mir_or_not <- if (x$mirror == 0) bcirc else mir(bcirc)
     boot_mir_or_not <- if (x$mirror == 0) boot else mir(boot)
 
-    # Once mirroring is identified, apply rotation:
+    # Once reflection is identified, apply rotation:
     rot_bcirc <- rot(bcirc_mir_or_not, angle=x$rotation)
     rot_boot <- rot(boot_mir_or_not, angle=x$rotation)
     rot_hammer <- rot(hammer, angle=x$hampos)

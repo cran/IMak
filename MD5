@@ -1,7 +1,7 @@
-82fd445292a0ea0a58475d00d1d92ee9 *DESCRIPTION
+b55383ff12a2bb4dbcdcb3fccbea2dab *DESCRIPTION
 1bf9e4a501bca551a2fbe33792dcee6e *NAMESPACE
-1bdf67c6971b973339d4b13c46d1ab05 *R/buildfa.R
-fba1de9eaf15d4c7f4ff75f13c8ce3bc *R/plotfa.R
-5c066c050a881513c5815ace06888f44 *man/IMak.Rd
-1a9ff1cea1b6cfeb7c11cdefd99c7be4 *man/build_fa.Rd
-5de315110747e03758e8c28a02d3c750 *man/plot_fa.Rd
+716fe457e996b7bb546ef75b1a725e5f *R/buildfa.R
+eac28601819ca462f7604c64e52cf540 *R/plotfa.R
+5a0e3835310ca90590c73cc1d4220563 *man/IMak.Rd
+c6ba19c8164ac2c349c31f61eeb7ef63 *man/build_fa.Rd
+68efd0740308cac9a41885bbf147949e *man/plot_fa.Rd

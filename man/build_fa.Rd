@@ -15,13 +15,13 @@ build_fa(isomorphs = 1, main.rot = c(0, 0), mirror = 0, trap.rot = c(0,
 
 \item{main.rot}{A numeric vector with two main shape rotation values multiple of 45 and between -135 and 180. No rotation: 0.}
 
-\item{mirror}{A number designating mirroring presence or no mirroring (i.e., 1 or 0).}
+\item{mirror}{A number designating the presence of shape reflection or no reflection (i.e., 1 or 0).}
 
 \item{trap.rot}{A numeric vector with two trapezium rotation values multiple of 45 and between -135 and 180. No rotation: 0.}
 
-\item{subtract}{A numeric vector with two internal lines to subtract from 1 to 5, or letter "R" for a random subtraction. No subtraction: 0.}
+\item{subtract}{A numeric vector with two line segments of the main shape to subtract from 1 to 5, or letter "R" for a random subtraction. No subtraction: 0.}
 
-\item{dot.mov}{A numeric vector with two dot edge movements from 1 to 6. No dot edge movement: 0.}
+\item{dot.mov}{A numeric vector with two dot edge movement amounts, with a maximum of 5 movements in total. No dot edge movement: 0.}
 
 \item{a.main}{A numeric vector with possible rotation states of the main shape of Figure A from 1 to 8. Random by default.}
 
@@ -29,13 +29,13 @@ build_fa(isomorphs = 1, main.rot = c(0, 0), mirror = 0, trap.rot = c(0,
 
 \item{a.trap}{A numeric vector with possible rotation states of the trapezium of Figure A from 1 to 8. Random by default.}
 
-\item{a.dot}{A numeric vector with possible dot edge positions of Figure A from 1 to 6. Random by default.}
+\item{a.dot}{A numeric vector with possible dot positions in Figure A from 1 to 6. Random by default.}
 
 \item{constrict}{A character string designating a part of Figure A to display all possible positions every 'n' isomorphs.}
 
 \item{al.main.rot}{A numeric vector with alternative main shape rotation solutions. Random by default.}
 
-\item{al.mirror}{A numeric vector with alternative mirroring solutions. Random by default.}
+\item{al.mirror}{A numeric vector with alternative reflection solutions. Random by default.}
 
 \item{al.trap.rot}{A numeric vector with alternative trapezium rotation solutions. Random by default.}
 
@@ -77,7 +77,7 @@ throughout the options by following a Solutions Combination
 Design (Blum et al., 2016). They are random by default when
 \code{automatic=T}. When \code{automatic=F}, values must be
 chosen, which designate rotation angles between the correct
-and the alternative solutions, or alternative mirroring /
+and the alternative solutions, or alternative reflection /
 subtraction / dot positions. Three things to keep in mind:
 1. Three alternative solutions should be chosen for the
 main rule when working with only one rule. If
@@ -120,7 +120,7 @@ plot_fa(five)
 Diego Blum \email{<blumworx@gmail.com>}
 }
 \references{
-Blum, D., Holling, H., Galibert, M.S., & Forthmann, B. (2016, in press). Task difficulty prediction of figural analogies. \emph{Intelligence}.
+Blum, D., Holling, H., Galibert, M.S., & Forthmann, B. (2016). Task difficulty prediction of figural analogies. \emph{Intelligence, 56,} 72-81.
 }
 \seealso{
 \code{\link{IMak}}

@@ -20,15 +20,15 @@ plot_fa(items, which = 0, mode = "A", language = "E",
 
 \item{language.dir}{A character string designating language for output files. "A" by default selects all languages.}
 
-\item{form.int}{A character string designating the form from "A" to "D" of the internal shape lines, or "R" for random. Default is "A".}
+\item{form.int}{A character string designating the form from "A" to "D" of the internal main shape, or "R" for random. Default is "A".}
 
-\item{form.ext}{A character string designating the form from "A" to "D" of the external trapezium, or "R" for random. Default is "A".}
+\item{form.ext}{A character string designating the form from "A" to "D" of the trapezium, or "R" for random. Default is "A".}
 
 \item{size.shape}{A number designating the size of every shape. Default is 1.}
 
 \item{size.dot}{A number designating the size of every shape dot. Default is 2.}
 
-\item{size.line}{A number designating the thickness of every shape line. Default is 1.}
+\item{size.line}{A number designating the thickness of every shape. Default is 1.}
 
 \item{size.q}{A number designating the size of the question mark. Default is 3.5.}
 
@@ -76,7 +76,7 @@ one <- plot_fa(one, which = 2, switch.from = 1, switch.to = 2)
 two <- build_fa(isomorphs = 4, mirror = 1, trap.rot = c(90, 45))
 ## Plot them in German language:
 plot_fa(two, language = "D")
-## Plot only items 2 and 3 in Spanish and choose form "B" for the internal lines:
+## Plot only items 2 and 3 in Spanish and choose form "B" for the internal main shape:
 plot_fa(two, language = "S", form.int = "B", which = c(2, 3))
 ## Choose a different directory and save these two items by keeping the latter configuration:
 # dir2 <- "enter your new directory here"
@@ -97,7 +97,7 @@ plot_fa(three, which = 13, mode = "C", language = "D")
 Diego Blum \email{<blumworx@gmail.com>}
 }
 \references{
-Blum, D., Holling, H., Galibert, M.S., & Forthmann, B. (2016, in press). Task difficulty prediction of figural analogies. \emph{Intelligence}.
+Blum, D., Holling, H., Galibert, M.S., & Forthmann, B. (2016). Task difficulty prediction of figural analogies. \emph{Intelligence, 56,} 72-81.
 }
 \seealso{
 \code{\link{IMak}}
