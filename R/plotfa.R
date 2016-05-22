@@ -133,7 +133,7 @@ plot_fa <- function(
     all_or_some <- if (sum(which == 0) == length(which))
       "all" else if (sum(which > 0) == length(which))
         "some"
-  } else stop("Incorrect data imput for 'which'.")
+  } else stop("Incorrect data input for 'which'.")
 
   # Creating a data frame with item characteristics:
   information <- data.frame(NA, NA, NA, NA, NA, NA)
