@@ -1,14 +1,14 @@
 #' Plot figural analogies.
 #'
-#' \code{plot_fa} plots the information of figural analogies.
-#' This information is previously generated with function
-#' \code{\link{build_fa}}.
+#' \code{plot_fa} plots figural analogies by reading the
+#' information previously stored in an object of class \code{'fa_items'}
+#' generated with \code{\link{build_fa}}.
 #'
 #' The \code{plot_fa} function should not be assigned to an
-#' object, except when willing to use the optional arguments
+#' object, except when willing to use the optional parameters
 #' \code{switch.from} and \code{switch.to}. In the latter
 #' case, the object name should be the same as the name of the
-#' object of class \code{'fa_items'}, and argument
+#' object of class \code{'fa_items'}, and the argument for
 #' \code{which} must designate the isomorph to be affected
 #' even if there is only one isomorph available. For example:
 #' \preformatted{object <- plot_fa(object, which = 1,
@@ -27,12 +27,13 @@
 #' @param size.q A number designating the size of the question mark. Default is 3.5.
 #' @param size.word A number designating the size of the verbal options. Default is 1.2.
 #' @param info Should rules applied and correct answers be informed? True by default.
-#' @param directory Character string designating a file in your PC where to store the isomorphs.
+#' @param sep Field separator character of the "Info.csv" file. The default "," is recommended for English MSOffice.
+#' @param directory A character string designating a file in your PC where to store the isomorphs.
 #' @param switch.from Number 'p' designating an option from 1 to 8 to switch with 'q'.
 #' @param switch.to Number 'q' designating an option from 1 to 8 to switch with 'p'.
-#' @return A data frame containing rules applied and right answers when \code{info=T} by default, or an object of class \code{'fa_items'} when \code{which} has length 1, its value is greater than 0 and both \code{switch.from} and \code{switch.to} are greater than 0.
+#' @return A data frame containing rules applied and right answers when \code{info = T} by default, or an object of class \code{'fa_items'} when \code{which} has length 1, its value is greater than 0 and both \code{switch.from} and \code{switch.to} are greater than 0.
 #' @author Diego Blum \email{<blumworx@gmail.com>}
-#' @references Blum, D., Holling, H., Galibert, M.S., & Forthmann, B. (2016). Task difficulty prediction of figural analogies. \emph{Intelligence, 56,} 72-81.
+#' @references Blum, D., & Holling, H. (2018, in press). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology}.
 #' @seealso \code{\link{IMak}}
 #' @examples
 #' ## Create two isomorphs with one rule, setting the correct answer to 1:
@@ -55,7 +56,7 @@
 #' # dir2 <- "enter your new directory here"
 #' # plot_fa(two, which = c(2, 3), language.dir = "S", form.int = "B", directory = dir2)
 #'
-#' ## Create 20 isomorphs with three rules. Set automatic=F and affect the options:
+#' ## Create 20 isomorphs with three rules. Set automatic = F and affect the options:
 #' three <- build_fa(isomorphs = 20, mirror = 1, trap.rot = c(90, 45), dot.mov = c(1, 2),
 #' automatic = FALSE, al.mirror = c(0, 1), al.trap.rot = -45, al.dot.mov = 1)
 #' ## Plot them:
@@ -83,6 +84,7 @@ plot_fa <- function(
   size.q = 3.5,
   size.word = 1.2,
   info = T,
+  sep = ",",
   directory = F,
   switch.from = 0,
   switch.to = 0)
@@ -411,7 +413,7 @@ plot_fa <- function(
 
   # Information about the items to be plotted:
   if (directory != F & info == T)
-    write.table(information, "Info.csv", quote=F, sep=";", row.names=F)
+    write.table(information, "Info.csv", quote = F, sep = sep, row.names = F)
 
   if (length(which) == 1 & which[1] > 0 &
       switch.from %in% 1:8 & switch.to %in% 1:8 & directory == F)

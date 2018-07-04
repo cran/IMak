@@ -53,35 +53,36 @@ build_fa(isomorphs = 1, main.rot = c(0, 0), mirror = 0, trap.rot = c(0,
 An object of class \code{'fa_items'}, basically a list including elements to be plotted with function \code{\link{plot_fa}}.
 }
 \description{
-\code{build_fa} generates the information of figural analogies.
+\code{build_fa} generates the information of figural analogies
+that can be read by \code{\link{plot_fa}}.
 }
 \details{
-The argument \code{isomorphs} is the number of isomorphic
-items to be created. The arguments \code{main.rot},
+The \code{isomorphs} parameter represents the number of isomorphic
+items to be created. Parameters \code{main.rot},
 \code{mirror}, \code{trap.rot}, \code{subtract}, and
-\code{dot.mov} are the so-called radical arguments.
-They designate how rules are applied to all the isomorphs.
+\code{dot.mov} are the so-called radicals, and they can be
+therefore used to pass the radical arguments.
+Such arguments designate how rules are applied to all of the isomorphs.
 \code{main.rot} and \code{mirror} cannot be combined
-because it is unpractical (Blum et al., 2016).
-The arguments \code{a.main.rot}, \code{a.flip},
-\code{a.trap}, and \code{a.dot} are the so-called
-incidental arguments. They affect how the upper-left shape
-of the main matrix (i.e., Figure A) presents itself in
+because of rule confusion (Blum & Holling, 2018).
+The \code{a.main.rot}, \code{a.flip},
+\code{a.trap}, and \code{a.dot} parameters are the so-called
+incidentals. They affect how Figure A of the matrix presents itself in
 every isomorph. Setting \code{constrict} to \code{"main"},
 \code{"trap"} or \code{"dot"} displays all possible
-positions of a certain part of Figure A (main shape,
+positions of a certain part of Figure A (i.e., main shape,
 trapezium or dot) every 'n' isomorphs.
-Radical arguments that use the prefix \code{al.} designate
+Radical parameters that use the prefix \code{al.} designate
 alternative solutions for each of the applied rules
 throughout the options by following a Solutions Combination
-Design (Blum et al., 2016). They are random by default when
-\code{automatic=T}. When \code{automatic=F}, values must be
-chosen, which designate rotation angles between the correct
-and the alternative solutions, or alternative reflection /
-subtraction / dot positions. Three things to keep in mind:
+Design (Blum & Holling, 2018). They are random by default when
+\code{automatic = T}. When \code{automatic = F}, arguments must be
+passed, which either designate rotation angles that distinguish the correct
+answer from the alternative solutions, or alternative reflection /
+subtraction / dot positions. Three things should be kept in mind:
 1. Three alternative solutions should be chosen for the
 main rule when working with only one rule. If
-\code{add.rule} is not altered, then all other rules should
+\code{add.rule} is not altered, then all of the other rules should
 also comprise one alternative solution each. If
 \code{add.rule} designates a specific rule from 1 to 5,
 then the latter statement is only valid for this rule.
@@ -101,13 +102,13 @@ two <- build_fa(isomorphs = 4, main.rot = c(180, 135), trap.rot = c(90, 45))
 ## Plot them:
 plot_fa(two)
 
-## Create 20 isomorphs with three rules. Set automatic=F and affect the options:
+## Create 20 isomorphs with three rules. Set automatic = F and affect the options:
 three <- build_fa(isomorphs = 20, mirror = 1, trap.rot = c(90, 45), dot.mov = c(1, 2),
 automatic = FALSE, al.mirror = c(0, 1), al.trap.rot = -45, al.dot.mov = 1)
 ## Plot them:
 plot_fa(three)
 
-## Create and plot four two-rule based isomorphs, all of them comprising the same Figure A:
+## Create and plot four two-rule-based isomorphs, all of them comprising the same Figure A:
 four <- build_fa(isomorphs = 4, a.main = 1, a.flip = FALSE, a.trap = 2, a.dot = 6,
 mirror = 1, subtract = "R")
 plot_fa(four)
@@ -116,13 +117,12 @@ plot_fa(four)
 five <- build_fa(isomorphs = 16, subtract = c(1, 4), constrict = "main")
 plot_fa(five)
 }
-\author{
-Diego Blum \email{<blumworx@gmail.com>}
-}
 \references{
-Blum, D., Holling, H., Galibert, M.S., & Forthmann, B. (2016). Task difficulty prediction of figural analogies. \emph{Intelligence, 56,} 72-81.
+Blum, D., & Holling, H. (2018, in press). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology}.
 }
 \seealso{
 \code{\link{IMak}}
 }
-
+\author{
+Diego Blum \email{<blumworx@gmail.com>}
+}
