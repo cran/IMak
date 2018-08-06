@@ -33,7 +33,7 @@
 #' @param switch.to Number 'q' designating an option from 1 to 8 to switch with 'p'.
 #' @return A data frame containing rules applied and right answers when \code{info = T} by default, or an object of class \code{'fa_items'} when \code{which} has length 1, its value is greater than 0 and both \code{switch.from} and \code{switch.to} are greater than 0.
 #' @author Diego Blum \email{<blumworx@gmail.com>}
-#' @references Blum, D., & Holling, H. (2018, in press). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology}.
+#' @references Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. DOI:10.3389/fpsyg.2018.01286
 #' @seealso \code{\link{IMak}}
 #' @examples
 #' ## Create two isomorphs with one rule, setting the correct answer to 1:

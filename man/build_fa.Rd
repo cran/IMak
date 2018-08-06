@@ -118,7 +118,7 @@ five <- build_fa(isomorphs = 16, subtract = c(1, 4), constrict = "main")
 plot_fa(five)
 }
 \references{
-Blum, D., & Holling, H. (2018, in press). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology}.
+Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. DOI:10.3389/fpsyg.2018.01286
 }
 \seealso{
 \code{\link{IMak}}
