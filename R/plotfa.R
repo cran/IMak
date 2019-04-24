@@ -26,15 +26,15 @@
 #' @param size.line A number designating the thickness of every shape. Default is 1.
 #' @param size.q A number designating the size of the question mark. Default is 3.5.
 #' @param size.word A number designating the size of the verbal options. Default is 1.2.
-#' @param info Should rules applied and correct answers be informed? True by default.
-#' @param sep Field separator character of the "Info.csv" file. The default "," is recommended for English MSOffice.
-#' @param directory A character string designating a file in your PC where to store the isomorphs.
+#' @param info Should the applied rules and correct answers be informed? True by default.
+#' @param sep Field separator character of the "Info.csv" file. The default "," is recommended for English MS Office.
+#' @param directory A character string designating a folder in your PC where to store the isomorphs.
 #' @param switch.from Number 'p' designating an option from 1 to 8 to switch with 'q'.
 #' @param switch.to Number 'q' designating an option from 1 to 8 to switch with 'p'.
 #' @return A data frame containing rules applied and right answers when \code{info = T} by default, or an object of class \code{'fa_items'} when \code{which} has length 1, its value is greater than 0 and both \code{switch.from} and \code{switch.to} are greater than 0.
 #' @author Diego Blum \email{<blumworx@gmail.com>}
 #' @references Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. DOI:10.3389/fpsyg.2018.01286
-#' @seealso \code{\link{IMak}}
+#' @seealso \code{\link{build_fa}}
 #' @examples
 #' ## Create two isomorphs with one rule, setting the correct answer to 1:
 #' one <- build_fa(isomorphs = 2, dot.mov = c(1, 2), correct = 1)

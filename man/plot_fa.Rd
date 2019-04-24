@@ -5,9 +5,10 @@
 \title{Plot figural analogies.}
 \usage{
 plot_fa(items, which = 0, mode = "A", language = "E",
-  language.dir = "A", form.int = "A", form.ext = "A", size.shape = 1,
-  size.dot = 2, size.line = 1, size.q = 3.5, size.word = 1.2,
-  info = T, sep = ",", directory = F, switch.from = 0, switch.to = 0)
+  language.dir = "A", form.int = "A", form.ext = "A",
+  size.shape = 1, size.dot = 2, size.line = 1, size.q = 3.5,
+  size.word = 1.2, info = T, sep = ",", directory = F,
+  switch.from = 0, switch.to = 0)
 }
 \arguments{
 \item{items}{An object of class \code{'fa_items'} generated with function \code{build_fa}. No default.}
@@ -34,11 +35,11 @@ plot_fa(items, which = 0, mode = "A", language = "E",
 
 \item{size.word}{A number designating the size of the verbal options. Default is 1.2.}
 
-\item{info}{Should rules applied and correct answers be informed? True by default.}
+\item{info}{Should the applied rules and correct answers be informed? True by default.}
 
-\item{sep}{Field separator character of the "Info.csv" file. The default "," is recommended for English MSOffice.}
+\item{sep}{Field separator character of the "Info.csv" file. The default "," is recommended for English MS Office.}
 
-\item{directory}{A character string designating a file in your PC where to store the isomorphs.}
+\item{directory}{A character string designating a folder in your PC where to store the isomorphs.}
 
 \item{switch.from}{Number 'p' designating an option from 1 to 8 to switch with 'q'.}
 
@@ -99,7 +100,7 @@ plot_fa(three, which = 13, mode = "C", language = "D")
 Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. DOI:10.3389/fpsyg.2018.01286
 }
 \seealso{
-\code{\link{IMak}}
+\code{\link{build_fa}}
 }
 \author{
 Diego Blum \email{<blumworx@gmail.com>}

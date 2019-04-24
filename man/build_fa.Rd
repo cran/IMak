@@ -4,11 +4,12 @@
 \alias{build_fa}
 \title{Build figural analogies.}
 \usage{
-build_fa(isomorphs = 1, main.rot = c(0, 0), mirror = 0, trap.rot = c(0,
-  0), subtract = c(0, 0), dot.mov = c(0, 0), a.main = "R", a.flip = "R",
-  a.trap = "R", a.dot = "R", constrict = F, al.main.rot = 0,
-  al.mirror = 0, al.trap.rot = 0, al.subtract = 0, al.dot.mov = 0,
-  correct = 0, add.rule = 0, automatic = T)
+build_fa(isomorphs = 1, main.rot = c(0, 0), mirror = 0,
+  trap.rot = c(0, 0), subtract = c(0, 0), dot.mov = c(0, 0),
+  a.main = "R", a.flip = "R", a.trap = "R", a.dot = "R",
+  constrict = F, al.main.rot = 0, al.mirror = 0, al.trap.rot = 0,
+  al.subtract = 0, al.dot.mov = 0, correct = 0, add.rule = 0,
+  automatic = T)
 }
 \arguments{
 \item{isomorphs}{A number of isomorphic items to be developed.}
@@ -121,7 +122,7 @@ plot_fa(five)
 Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. DOI:10.3389/fpsyg.2018.01286
 }
 \seealso{
-\code{\link{IMak}}
+\code{\link{plot_fa}}
 }
 \author{
 Diego Blum \email{<blumworx@gmail.com>}

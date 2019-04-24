@@ -1,0 +1,20 @@
+bibentry(bibtype = "Article",
+  title        = "Automatic generation of figural analogies with the IMak package",
+  author       = c(person(given = "Diego",
+                          family = "Blum"),
+                   person(given = "Heinz",
+                          family = "Holling")),
+  journal      = "Frontiers in Psychology",
+  year         = "2018",
+  volume       = "9",
+  number       = "1286",
+  pages        = "1--13",
+  doi          = "10.3389/fpsyg.2018.01286",
+
+  header       = "To cite IMak in publications use:",
+  textVersion  =
+  paste("Blum, D., & Holling, H. (2018).",
+        "Automatic generation of figural analogies with the IMak package.",
+        "Frontiers in Psychology, 9(1286), 1-13.",
+        "doi: 10.3389/fpsyg.2018.01286.")
+)

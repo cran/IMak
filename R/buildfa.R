@@ -59,7 +59,7 @@
 #' @return An object of class \code{'fa_items'}, basically a list including elements to be plotted with function \code{\link{plot_fa}}.
 #' @author Diego Blum \email{<blumworx@gmail.com>}
 #' @references Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. DOI:10.3389/fpsyg.2018.01286
-#' @seealso \code{\link{IMak}}
+#' @seealso \code{\link{plot_fa}}
 #' @examples
 #' ## Create two isomorphs with one rule, setting the correct answer to 1:
 #' one <- build_fa(isomorphs = 2, dot.mov = c(1, 2), correct = 1)
