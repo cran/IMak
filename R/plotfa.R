@@ -4,39 +4,33 @@
 #' information previously stored in an object of class \code{'fa_items'}
 #' generated with \code{\link{build_fa}}.
 #'
-#' The \code{plot_fa} function should not be assigned to an
-#' object, except when willing to use the optional parameters
-#' \code{switch.from} and \code{switch.to}. In the latter
-#' case, the object name should be the same as the name of the
-#' object of class \code{'fa_items'}, and the argument for
-#' \code{which} must designate the isomorph to be affected
-#' even if there is only one isomorph available. For example:
-#' \preformatted{object <- plot_fa(object, which = 1,
-#' switch.from = 1, switch.to = 2)}
+#' Thorough information about the \code{plot_fa} function can be found in the cited
+#' research paper of Blum and Holling (2018). Make sure to read the PDF version of it,
+#' since it is clearer. Additional information can also be found on icar-project.com.
 #'
 #' @param items An object of class \code{'fa_items'} generated with function \code{build_fa}. No default.
 #' @param which A numeric vector designating which isomorph(s) to plot. Plot all by default.
-#' @param mode A character string designating plot mode "A", "B" or "C". Plot mode "A" by default.
-#' @param language A character string designating English ("E"), German ("D") or Spanish ("S") language. Default is "E".
-#' @param language.dir A character string designating language for output files. "A" by default selects all languages.
-#' @param form.int A character string designating the form from "A" to "D" of the internal main shape, or "R" for random. Default is "A".
-#' @param form.ext A character string designating the form from "A" to "D" of the trapezium, or "R" for random. Default is "A".
+#' @param mode A character string designating plot mode \code{"A"}, \code{"B"} or \code{"C"}. Plot mode \code{"A"} by default.
+#' @param language A character string designating English (\code{"E"}), German (\code{"D"}) or Spanish (\code{"S"}) language. Default is \code{"E"}.
+#' @param language.dir A character string designating language for output files. \code{"A"} by default selects all languages.
+#' @param form.int A character string designating the form from \code{"A"} to \code{"D"} of the internal main shape, or \code{"R"} for random. Default is \code{"A"}.
+#' @param form.ext A character string designating the form from \code{"A"} to \code{"D"} of the trapezium, or \code{"R"} for random. Default is \code{"A"}.
 #' @param size.shape A number designating the size of every shape. Default is 1.
 #' @param size.dot A number designating the size of every shape dot. Default is 2.
 #' @param size.line A number designating the thickness of every shape. Default is 1.
 #' @param size.q A number designating the size of the question mark. Default is 3.5.
 #' @param size.word A number designating the size of the verbal options. Default is 1.2.
 #' @param info Should the applied rules and correct answers be informed? True by default.
-#' @param sep Field separator character of the "Info.csv" file. The default "," is recommended for English MS Office.
+#' @param sep Field separator character of the "Info.csv" file. The default \code{","} is recommended for English MS Office.
 #' @param directory A character string designating a folder in your PC where to store the isomorphs.
 #' @param switch.from Number 'p' designating an option from 1 to 8 to switch with 'q'.
 #' @param switch.to Number 'q' designating an option from 1 to 8 to switch with 'p'.
 #' @return A data frame containing rules applied and right answers when \code{info = T} by default, or an object of class \code{'fa_items'} when \code{which} has length 1, its value is greater than 0 and both \code{switch.from} and \code{switch.to} are greater than 0.
 #' @author Diego Blum \email{<blumworx@gmail.com>}
-#' @references Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. DOI:10.3389/fpsyg.2018.01286
+#' @references Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. <DOI:10.3389/fpsyg.2018.01286>
 #' @seealso \code{\link{build_fa}}
 #' @examples
-#' ## Create two isomorphs with one rule, setting the correct answer to 1:
+#' ## Create two isomorphs with one rule, and set the correct answer to 1:
 #' one <- build_fa(isomorphs = 2, dot.mov = c(1, 2), correct = 1)
 #' ## Plot them:
 #' plot_fa(one)

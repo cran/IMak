@@ -4,12 +4,27 @@
 \alias{build_fa}
 \title{Build figural analogies.}
 \usage{
-build_fa(isomorphs = 1, main.rot = c(0, 0), mirror = 0,
-  trap.rot = c(0, 0), subtract = c(0, 0), dot.mov = c(0, 0),
-  a.main = "R", a.flip = "R", a.trap = "R", a.dot = "R",
-  constrict = F, al.main.rot = 0, al.mirror = 0, al.trap.rot = 0,
-  al.subtract = 0, al.dot.mov = 0, correct = 0, add.rule = 0,
-  automatic = T)
+build_fa(
+  isomorphs = 1,
+  main.rot = c(0, 0),
+  mirror = 0,
+  trap.rot = c(0, 0),
+  subtract = c(0, 0),
+  dot.mov = c(0, 0),
+  a.main = "R",
+  a.flip = "R",
+  a.trap = "R",
+  a.dot = "R",
+  constrict = F,
+  al.main.rot = 0,
+  al.mirror = 0,
+  al.trap.rot = 0,
+  al.subtract = 0,
+  al.dot.mov = 0,
+  correct = 0,
+  add.rule = 0,
+  automatic = T
+)
 }
 \arguments{
 \item{isomorphs}{A number of isomorphic items to be developed.}
@@ -20,13 +35,13 @@ build_fa(isomorphs = 1, main.rot = c(0, 0), mirror = 0,
 
 \item{trap.rot}{A numeric vector with two trapezium rotation values multiple of 45 and between -135 and 180. No rotation: 0.}
 
-\item{subtract}{A numeric vector with two line segments of the main shape to subtract from 1 to 5, or letter "R" for a random subtraction. No subtraction: 0.}
+\item{subtract}{A numeric vector with two line segments of the main shape to subtract from 1 to 5, or letter \code{"R"} for a random subtraction. No subtraction: 0.}
 
 \item{dot.mov}{A numeric vector with two dot edge movement amounts, with a maximum of 5 movements in total. No dot edge movement: 0.}
 
 \item{a.main}{A numeric vector with possible rotation states of the main shape of Figure A from 1 to 8. Random by default.}
 
-\item{a.flip}{A logical value designating whether Figure A is flipped with respect to its vertical axis or not (i.e., T or F). Random by default.}
+\item{a.flip}{A logical value designating whether Figure A is flipped with respect to its vertical axis or not (i.e., \code{T} or \code{F}). Random by default.}
 
 \item{a.trap}{A numeric vector with possible rotation states of the trapezium of Figure A from 1 to 8. Random by default.}
 
@@ -58,68 +73,35 @@ An object of class \code{'fa_items'}, basically a list including elements to be 
 that can be read by \code{\link{plot_fa}}.
 }
 \details{
-The \code{isomorphs} parameter represents the number of isomorphic
-items to be created. Parameters \code{main.rot},
-\code{mirror}, \code{trap.rot}, \code{subtract}, and
-\code{dot.mov} are the so-called radicals, and they can be
-therefore used to pass the radical arguments.
-Such arguments designate how rules are applied to all of the isomorphs.
-\code{main.rot} and \code{mirror} cannot be combined
-because of rule confusion (Blum & Holling, 2018).
-The \code{a.main.rot}, \code{a.flip},
-\code{a.trap}, and \code{a.dot} parameters are the so-called
-incidentals. They affect how Figure A of the matrix presents itself in
-every isomorph. Setting \code{constrict} to \code{"main"},
-\code{"trap"} or \code{"dot"} displays all possible
-positions of a certain part of Figure A (i.e., main shape,
-trapezium or dot) every 'n' isomorphs.
-Radical parameters that use the prefix \code{al.} designate
-alternative solutions for each of the applied rules
-throughout the options by following a Solutions Combination
-Design (Blum & Holling, 2018). They are random by default when
-\code{automatic = T}. When \code{automatic = F}, arguments must be
-passed, which either designate rotation angles that distinguish the correct
-answer from the alternative solutions, or alternative reflection /
-subtraction / dot positions. Three things should be kept in mind:
-1. Three alternative solutions should be chosen for the
-main rule when working with only one rule. If
-\code{add.rule} is not altered, then all of the other rules should
-also comprise one alternative solution each. If
-\code{add.rule} designates a specific rule from 1 to 5,
-then the latter statement is only valid for this rule.
-2. Two alternative solutions should be chosen for each rule
-of two-rule-based items.
-3. One alternative solution should be chosen for each rule
-of items comprising more than two rules.
+Thorough information about the \code{build_fa} function can be found in the cited
+research paper of Blum and Holling (2018). Make sure to read the PDF version of it,
+since it is clearer. Additional information can also be found on icar-project.com.
 }
 \examples{
-## Create two isomorphs with one rule, setting the correct answer to 1:
+## Create two isomorphs with one rule, and set the correct answer to 1:
 one <- build_fa(isomorphs = 2, dot.mov = c(1, 2), correct = 1)
-## Plot them:
-plot_fa(one)
+## For plotting options, see the plot_fa examples.
 
 ## Create four isomorphs with two rules:
 two <- build_fa(isomorphs = 4, main.rot = c(180, 135), trap.rot = c(90, 45))
-## Plot them:
-plot_fa(two)
+## For plotting options, see the plot_fa examples.
 
-## Create 20 isomorphs with three rules. Set automatic = F and affect the options:
+## Create 20 isomorphs with three rules. Set automatic = FALSE and affect the options:
 three <- build_fa(isomorphs = 20, mirror = 1, trap.rot = c(90, 45), dot.mov = c(1, 2),
 automatic = FALSE, al.mirror = c(0, 1), al.trap.rot = -45, al.dot.mov = 1)
-## Plot them:
-plot_fa(three)
+## For plotting options, see the plot_fa examples.
 
 ## Create and plot four two-rule-based isomorphs, all of them comprising the same Figure A:
 four <- build_fa(isomorphs = 4, a.main = 1, a.flip = FALSE, a.trap = 2, a.dot = 6,
 mirror = 1, subtract = "R")
-plot_fa(four)
+## For plotting options, see the plot_fa examples.
 
 ## Create and plot 16 isomorphs by constricting the main shape rotation rule:
 five <- build_fa(isomorphs = 16, subtract = c(1, 4), constrict = "main")
-plot_fa(five)
+## For plotting options, see the plot_fa examples.
 }
 \references{
-Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. DOI:10.3389/fpsyg.2018.01286
+Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. <DOI:10.3389/fpsyg.2018.01286>
 }
 \seealso{
 \code{\link{plot_fa}}

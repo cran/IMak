@@ -4,26 +4,40 @@
 \alias{plot_fa}
 \title{Plot figural analogies.}
 \usage{
-plot_fa(items, which = 0, mode = "A", language = "E",
-  language.dir = "A", form.int = "A", form.ext = "A",
-  size.shape = 1, size.dot = 2, size.line = 1, size.q = 3.5,
-  size.word = 1.2, info = T, sep = ",", directory = F,
-  switch.from = 0, switch.to = 0)
+plot_fa(
+  items,
+  which = 0,
+  mode = "A",
+  language = "E",
+  language.dir = "A",
+  form.int = "A",
+  form.ext = "A",
+  size.shape = 1,
+  size.dot = 2,
+  size.line = 1,
+  size.q = 3.5,
+  size.word = 1.2,
+  info = T,
+  sep = ",",
+  directory = F,
+  switch.from = 0,
+  switch.to = 0
+)
 }
 \arguments{
 \item{items}{An object of class \code{'fa_items'} generated with function \code{build_fa}. No default.}
 
 \item{which}{A numeric vector designating which isomorph(s) to plot. Plot all by default.}
 
-\item{mode}{A character string designating plot mode "A", "B" or "C". Plot mode "A" by default.}
+\item{mode}{A character string designating plot mode \code{"A"}, \code{"B"} or \code{"C"}. Plot mode \code{"A"} by default.}
 
-\item{language}{A character string designating English ("E"), German ("D") or Spanish ("S") language. Default is "E".}
+\item{language}{A character string designating English (\code{"E"}), German (\code{"D"}) or Spanish (\code{"S"}) language. Default is \code{"E"}.}
 
-\item{language.dir}{A character string designating language for output files. "A" by default selects all languages.}
+\item{language.dir}{A character string designating language for output files. \code{"A"} by default selects all languages.}
 
-\item{form.int}{A character string designating the form from "A" to "D" of the internal main shape, or "R" for random. Default is "A".}
+\item{form.int}{A character string designating the form from \code{"A"} to \code{"D"} of the internal main shape, or \code{"R"} for random. Default is \code{"A"}.}
 
-\item{form.ext}{A character string designating the form from "A" to "D" of the trapezium, or "R" for random. Default is "A".}
+\item{form.ext}{A character string designating the form from \code{"A"} to \code{"D"} of the trapezium, or \code{"R"} for random. Default is \code{"A"}.}
 
 \item{size.shape}{A number designating the size of every shape. Default is 1.}
 
@@ -37,7 +51,7 @@ plot_fa(items, which = 0, mode = "A", language = "E",
 
 \item{info}{Should the applied rules and correct answers be informed? True by default.}
 
-\item{sep}{Field separator character of the "Info.csv" file. The default "," is recommended for English MS Office.}
+\item{sep}{Field separator character of the "Info.csv" file. The default \code{","} is recommended for English MS Office.}
 
 \item{directory}{A character string designating a folder in your PC where to store the isomorphs.}
 
@@ -54,18 +68,12 @@ information previously stored in an object of class \code{'fa_items'}
 generated with \code{\link{build_fa}}.
 }
 \details{
-The \code{plot_fa} function should not be assigned to an
-object, except when willing to use the optional parameters
-\code{switch.from} and \code{switch.to}. In the latter
-case, the object name should be the same as the name of the
-object of class \code{'fa_items'}, and the argument for
-\code{which} must designate the isomorph to be affected
-even if there is only one isomorph available. For example:
-\preformatted{object <- plot_fa(object, which = 1,
-switch.from = 1, switch.to = 2)}
+Thorough information about the \code{plot_fa} function can be found in the cited
+research paper of Blum and Holling (2018). Make sure to read the PDF version of it,
+since it is clearer. Additional information can also be found on icar-project.com.
 }
 \examples{
-## Create two isomorphs with one rule, setting the correct answer to 1:
+## Create two isomorphs with one rule, and set the correct answer to 1:
 one <- build_fa(isomorphs = 2, dot.mov = c(1, 2), correct = 1)
 ## Plot them:
 plot_fa(one)
@@ -97,7 +105,7 @@ plot_fa(three, which = 13, mode = "C", language = "D")
 # plot_fa(three, which = 13, mode = "C", language.dir = "D", directory = dir3)
 }
 \references{
-Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. DOI:10.3389/fpsyg.2018.01286
+Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. <DOI:10.3389/fpsyg.2018.01286>
 }
 \seealso{
 \code{\link{build_fa}}
