@@ -36,7 +36,7 @@ afs(
 )
 }
 \arguments{
-\item{path}{Directory where files are saved and/or collected. For example: \code{"c:/Desktop/Folder"}. For a figural item, figural stimuli should be placed inside the correspondent folder.}
+\item{path}{Directory where files are saved and/or collected. For example: \code{"C:/Desktop/Folder"}. For a figural item, figural stimuli should be placed inside the correspondent folder.}
 
 \item{type}{Should the \code{afs} function create a figural (\code{"F"}) or a verbal (\code{"V"}) item?}
 

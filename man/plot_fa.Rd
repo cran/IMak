@@ -93,7 +93,7 @@ plot_fa(two, language = "S", form.int = "B", which = c(2, 3))
 # dir2 <- "enter your new directory here"
 # plot_fa(two, which = c(2, 3), language.dir = "S", form.int = "B", directory = dir2)
 
-## Create 20 isomorphs with three rules. Set automatic = F and affect the options:
+## Create 20 isomorphs with three rules. Set automatic = FALSE and affect the options:
 three <- build_fa(isomorphs = 20, mirror = 1, trap.rot = c(90, 45), dot.mov = c(1, 2),
 automatic = FALSE, al.mirror = c(0, 1), al.trap.rot = -45, al.dot.mov = 1)
 ## Plot them:

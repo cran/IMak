@@ -1,9 +1,9 @@
-9442d7496ab2743d2b94fff1c7957948 *DESCRIPTION
+0a15ccd0541df8eea534e46525dd0e79 *DESCRIPTION
 877ab5c31d6ba2a7c9ce5777a177c8e6 *NAMESPACE
-432acc99d6193efe8a802b6ac93e6f49 *R/afs.R
+b6412e13d7127501beaf17cb03a4576b *R/afs.R
 72e2ca82f8e9f2193cace37d70cd1da2 *R/buildfa.R
-b54082ddf53a5ad1e15ca1234dadf983 *R/plotfa.R
+e8e28a16b0902a61f359e4ca5e5f2b56 *R/plotfa.R
 4d11ab3b9faeb2568add94e9c3ef7cf8 *inst/CITATION
-1482068b161bd51361e1d8cf5138f115 *man/afs.Rd
+91fb3d34dffaa2bd4bebaf22b2d0a1f3 *man/afs.Rd
 c5f8682e1e99486696fc74e9ed9ec0e8 *man/build_fa.Rd
-65aaf1b8e3a8494323c7f008ee559e9d *man/plot_fa.Rd
+875897e2a9bce0b6c151de510b940b54 *man/plot_fa.Rd

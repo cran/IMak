@@ -17,7 +17,7 @@
 #' that can be altered are: the way of indicating the A:B::C:D relations, the question mark,
 #' the option labels, the sizes and the language of verbal stimuli.
 #'
-#' @param path Directory where files are saved and/or collected. For example: \code{"c:/Desktop/Folder"}. For a figural item, figural stimuli should be placed inside the correspondent folder.
+#' @param path Directory where files are saved and/or collected. For example: \code{"C:/Desktop/Folder"}. For a figural item, figural stimuli should be placed inside the correspondent folder.
 #' @param type Should the \code{afs} function create a figural (\code{"F"}) or a verbal (\code{"V"}) item?
 #' @param sa String with stimulus name A of an A:B::C:D analogy, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
 #' @param sb String with stimulus name B of an A:B::C:D analogy, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
