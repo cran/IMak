@@ -26,7 +26,7 @@
 #' @param switch.from Number 'p' designating an option from 1 to 8 to switch with 'q'.
 #' @param switch.to Number 'q' designating an option from 1 to 8 to switch with 'p'.
 #' @return A data frame containing rules applied and right answers when \code{info = T} by default, or an object of class \code{'fa_items'} when \code{which} has length 1, its value is greater than 0 and both \code{switch.from} and \code{switch.to} are greater than 0.
-#' @author Diego Blum \email{<blumworx@gmail.com>}
+#' @author Diego Blum \email{blumworx@gmail.com}
 #' @references Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. <DOI:10.3389/fpsyg.2018.01286>
 #' @seealso \code{\link{build_fa}}
 #' @examples
@@ -92,7 +92,7 @@ plot_fa <- function(
         is.numeric(size.shape) == F | is.numeric(size.dot) == F | is.numeric(size.line) == F |
         is.numeric(size.q) == F | is.numeric(size.word) == F)
     stop("Incorrect data input.")
-  if (!class(items) == "fa_items")
+  if (!inherits(items, "fa_items"))
     stop("Object of class 'fa_items' not found.")
   if (switch.from > 0 & switch.to > 0 & (length(which) != 1 | sum(which) == 0))
     stop("Item to switch options is not correctly designated.")

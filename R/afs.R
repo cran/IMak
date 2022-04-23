@@ -46,7 +46,7 @@
 #' @param language Language of verbal stimuli including words of the stem.
 #' @param out Output file name.
 #' @return A PNG file containing the item.
-#' @author Diego Blum \email{<blumworx@gmail.com>}
+#' @author Diego Blum \email{blumworx@gmail.com}
 #' @importFrom "imager" "load.image"
 #' @importFrom "grDevices" "dev.off" "png"
 #' @importFrom "graphics" "strwidth" "layout" "arrows" "par" "plot" "text"

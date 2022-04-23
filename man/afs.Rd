@@ -115,5 +115,5 @@ that can be altered are: the way of indicating the A:B::C:D relations, the quest
 the option labels, the sizes and the language of verbal stimuli.
 }
 \author{
-Diego Blum \email{<blumworx@gmail.com>}
+Diego Blum \email{blumworx@gmail.com}
 }

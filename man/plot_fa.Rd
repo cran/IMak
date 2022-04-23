@@ -111,5 +111,5 @@ Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with t
 \code{\link{build_fa}}
 }
 \author{
-Diego Blum \email{<blumworx@gmail.com>}
+Diego Blum \email{blumworx@gmail.com}
 }
