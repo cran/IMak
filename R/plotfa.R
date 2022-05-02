@@ -30,7 +30,7 @@
 #' @references Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. <DOI:10.3389/fpsyg.2018.01286>
 #' @seealso \code{\link{build_fa}}
 #' @examples
-#' ## Create two isomorphs with one rule, and set the correct answer to 1:
+#' ## Create two isomorphs with one rule and set the correct answer to 1:
 #' one <- build_fa(isomorphs = 2, dot.mov = c(1, 2), correct = 1)
 #' ## Plot them:
 #' plot_fa(one)
@@ -57,9 +57,13 @@
 #' plot_fa(three)
 #' ## Plot each individual shape of item 13 in German language only:
 #' plot_fa(three, which = 13, mode = "C", language = "D")
-#' ## Choose a different directory and save the item parts:
+#' ## Save the item parts in a different folder. Re-import them to create and save another plot:
 #' # dir3 <- "enter your new directory here"
 #' # plot_fa(three, which = 13, mode = "C", language.dir = "D", directory = dir3)
+#' # afs(sa = "item13a.png", sb = "item13b.png", sc = "item13c.png",
+#' # s1 = "item13op1.png", s2 = "item13op2.png", s3 = "item13op3.png",
+#' # s4 = "item13op4.png", s5 = "item13op5.png", s6 = "item13op6.png",
+#' # s7 = "item13op7.png", s8 = "item13op8.png", ai.idn = T, path = dir3)
 #' @importFrom "grDevices" "dev.off" "png"
 #' @importFrom "graphics" "layout" "lines" "par" "plot" "points" "text"
 #' @importFrom "utils" "write.table"
@@ -93,9 +97,9 @@ plot_fa <- function(
         is.numeric(size.q) == F | is.numeric(size.word) == F)
     stop("Incorrect data input.")
   if (!inherits(items, "fa_items"))
-    stop("Object of class 'fa_items' not found.")
+    stop("Cannot find the item(s).")
   if (switch.from > 0 & switch.to > 0 & (length(which) != 1 | sum(which) == 0))
-    stop("Item to switch options is not correctly designated.")
+    stop("Item to switch options from is not correctly designated.")
   if ((switch.from > 0 | switch.to > 0) & (!switch.from %in% 1:8 | !switch.to %in% 1:8))
     stop("Incorrect data input for argument 'switch.from' or 'switch.to'.")
 

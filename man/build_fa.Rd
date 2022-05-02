@@ -78,27 +78,24 @@ research paper of Blum and Holling (2018). Make sure to read the PDF version of 
 since it is clearer. Additional information can also be found on icar-project.com.
 }
 \examples{
-## Create two isomorphs with one rule, and set the correct answer to 1:
-one <- build_fa(isomorphs = 2, dot.mov = c(1, 2), correct = 1)
 ## For plotting options, see the plot_fa examples.
+
+## Create two isomorphs with one rule and set the correct answer to 1:
+one <- build_fa(isomorphs = 2, dot.mov = c(1, 2), correct = 1)
 
 ## Create four isomorphs with two rules:
 two <- build_fa(isomorphs = 4, main.rot = c(180, 135), trap.rot = c(90, 45))
-## For plotting options, see the plot_fa examples.
 
 ## Create 20 isomorphs with three rules. Set automatic = FALSE and affect the options:
 three <- build_fa(isomorphs = 20, mirror = 1, trap.rot = c(90, 45), dot.mov = c(1, 2),
 automatic = FALSE, al.mirror = c(0, 1), al.trap.rot = -45, al.dot.mov = 1)
-## For plotting options, see the plot_fa examples.
 
-## Create and plot four two-rule-based isomorphs, all of them comprising the same Figure A:
+## Create four two-rule-based isomorphs, all of them comprising the same Figure A:
 four <- build_fa(isomorphs = 4, a.main = 1, a.flip = FALSE, a.trap = 2, a.dot = 6,
 mirror = 1, subtract = "R")
-## For plotting options, see the plot_fa examples.
 
-## Create and plot 16 isomorphs by constricting the main shape rotation rule:
+## Create 16 isomorphs by constricting the main shape rotation rule:
 five <- build_fa(isomorphs = 16, subtract = c(1, 4), constrict = "main")
-## For plotting options, see the plot_fa examples.
 }
 \references{
 Blum, D., & Holling, H. (2018). Automatic generation of figural analogies with the IMak package. \emph{Frontiers in psychology, 9}(1286), 1-13. <DOI:10.3389/fpsyg.2018.01286>

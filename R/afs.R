@@ -7,31 +7,31 @@
 #' Create an analogy item by using pre-made stimuli. Such stimuli can be either figural or
 #' verbal, and it should be sufficient to complete the A, B and C terms of an A:B::C:D analogy stem
 #' plus at least two answer options. Use a source/target folder to save the item by providing an
-#' argument to \code{path}. For a figural item, save the pre-made figures inside that folder
+#' argument to \code{path}. For a figural item, save the pre-made figures as PNG files inside that folder
 #' (the ideal would be to supply perfect-square high-resolution images).
 #' Give arguments to \code{sa}, \code{sb} and \code{sc}, thus indicating the names of stimuli A, B and C.
 #' Give arguments to \code{s1} and \code{s2} to indicate the names of two answer options. Provide further arguments
 #' to parameters \code{s3} to \code{s10} if you would like to add up to 10 options in total. All of these
-#' names are the image file names plus their extensions when you want to create a figural item.
+#' names are the image file names plus their ".png" extensions when you want to create a figural item.
 #' Include "All incorrect" and "I don't know" options by setting \code{ai.idn} to \code{TRUE}. Other variables
 #' that can be altered are: the way of indicating the A:B::C:D relations, the question mark,
 #' the option labels, the sizes and the language of verbal stimuli.
 #'
 #' @param path Directory where files are saved and/or collected. For example: \code{"C:/Desktop/Folder"}. For a figural item, figural stimuli should be placed inside the correspondent folder.
 #' @param type Should the \code{afs} function create a figural (\code{"F"}) or a verbal (\code{"V"}) item?
-#' @param sa String with stimulus name A of an A:B::C:D analogy, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
-#' @param sb String with stimulus name B of an A:B::C:D analogy, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
-#' @param sc String with stimulus name C of an A:B::C:D analogy, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
-#' @param s1 String with response option name 1, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
-#' @param s2 String with response option name 2, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
-#' @param s3 String with response option name 3, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
-#' @param s4 String with response option name 4, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
-#' @param s5 String with response option name 5, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
-#' @param s6 String with response option name 6, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
-#' @param s7 String with response option name 7, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
-#' @param s8 String with response option name 8, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
-#' @param s9 String with response option name 9, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
-#' @param s10 String with response option name 10, including point and PNG, JPEG or BMP extension when \code{type = "F"}.
+#' @param sa String with stimulus name A of an A:B::C:D analogy, including ".png" extension when \code{type = "F"}.
+#' @param sb String with stimulus name B of an A:B::C:D analogy, including ".png" extension when \code{type = "F"}.
+#' @param sc String with stimulus name C of an A:B::C:D analogy, including ".png" extension when \code{type = "F"}.
+#' @param s1 String with response option name 1, including ".png" extension when \code{type = "F"}.
+#' @param s2 String with response option name 2, including ".png" extension when \code{type = "F"}.
+#' @param s3 String with response option name 3, including ".png" extension when \code{type = "F"}.
+#' @param s4 String with response option name 4, including ".png" extension when \code{type = "F"}.
+#' @param s5 String with response option name 5, including ".png" extension when \code{type = "F"}.
+#' @param s6 String with response option name 6, including ".png" extension when \code{type = "F"}.
+#' @param s7 String with response option name 7, including ".png" extension when \code{type = "F"}.
+#' @param s8 String with response option name 8, including ".png" extension when \code{type = "F"}.
+#' @param s9 String with response option name 9, including ".png" extension when \code{type = "F"}.
+#' @param s10 String with response option name 10, including ".png" extension when \code{type = "F"}.
 #' @param relations Should analogical relations be indicated by arrows and a colon (\code{"A"}), just colons (\code{"C"}) or words (\code{"W"})?
 #' @param question Should there be a question mark?
 #' @param labels Should options be labeled by letters (\code{"L"}), numbers (\code{"N"}) or no labels (\code{F})?
@@ -47,9 +47,9 @@
 #' @param out Output file name.
 #' @return A PNG file containing the item.
 #' @author Diego Blum \email{blumworx@gmail.com}
-#' @importFrom "imager" "load.image"
+#' @importFrom "png" "readPNG"
 #' @importFrom "grDevices" "dev.off" "png"
-#' @importFrom "graphics" "strwidth" "layout" "arrows" "par" "plot" "text"
+#' @importFrom "graphics" "strwidth" "layout" "arrows" "par" "plot" "text" "rasterImage"
 #' @importFrom "utils" "head"
 #' @export
 afs <- function(
@@ -111,14 +111,14 @@ afs <- function(
   # Loading the information from files (type = "F") or as text (type = "V"):
 
   if (type == "F") {
-  sac <- load.image(paste0(path, sa))
-  sbc <- load.image(paste0(path, sb))
-  scc <- load.image(paste0(path, sc))
-  s1c <- load.image(paste0(path, s1))
-  s2c <- load.image(paste0(path, s2))
+  sac <- readPNG(paste0(path, sa))
+  sbc <- readPNG(paste0(path, sb))
+  scc <- readPNG(paste0(path, sc))
+  s1c <- readPNG(paste0(path, s1))
+  s2c <- readPNG(paste0(path, s2))
   for (i in 3:10) {
     if(get(paste0("s", i)) != "No content")
-      assign(paste0("s", i, "c"), load.image(paste0(path, get(paste0("s", i)))))
+      assign(paste0("s", i, "c"), readPNG(paste0(path, get(paste0("s", i)))))
   }
   } else {
   sac <- sa
@@ -309,11 +309,16 @@ afs <- function(
   myplot()
   text(0, 0, q, cex = size.q, family = "serif")
   if (type == "F") {
-  plot(sac, axes = F)
-  plot(sbc, axes = F)
-  plot(scc, axes = F)
-  plot(s1c, axes = F)
-  plot(s2c, axes = F)
+  myplot()
+    rasterImage(sac, -5, -5, 5, 5)
+  myplot()
+    rasterImage(sbc, -5, -5, 5, 5)
+  myplot()
+    rasterImage(scc, -5, -5, 5, 5)
+  myplot()
+    rasterImage(s1c, -5, -5, 5, 5)
+  myplot()
+    rasterImage(s2c, -5, -5, 5, 5)
   } else {
     words <- c(sac, sbc, scc, s1c, s2c)
     for (i in 1:5) {
@@ -324,7 +329,10 @@ afs <- function(
   if (sum(content) > 2 | ai.idn == T)
   for (i in 3:max.options) {
     if (content[i] == 1)
-      if (type == "F") plot(get(paste0("s", i, "c")), axes = F) else {
+      if (type == "F") {
+        myplot()
+        rasterImage(get(paste0("s", i, "c")), -5, -5, 5, 5)
+        } else {
         myplot()
         text(0, 0, get(paste0("s", i, "c")), cex = size.word, family = "serif")
       }
